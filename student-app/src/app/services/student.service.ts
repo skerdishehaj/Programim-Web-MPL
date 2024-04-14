@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
@@ -14,6 +15,10 @@ export class StudentService {
 
   getStudents(): Observable<Student[]> {
     return this.http.get<Student[]>(this.apiUrl);
+  }
+
+  getStudent(id:number): Observable<Student> {
+    return this.http.get<Student>(this.apiUrl + `?id=${id}`, {});
   }
 
   postStudent(student: Student): Observable<Student> {

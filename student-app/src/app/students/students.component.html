@@ -11,12 +11,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let student of students">
-      <td>{{student.id}}</td>
+      <td>{{ student.id }}</td>
       <td>{{ student.name }}</td>
       <td>{{ student.username }}</td>
       <td><a href="{{student.email}}">{{ student.email }}</a></td>
       <td>
-        <a href="#" class="button button-green">Edit</a>
+        <a routerLink="/student/{{student.id}}" class="button button-green">Edit</a>
         <button class="button button-red" (click)="delete(student)">Delete</button>
       </td>
     </tr>
